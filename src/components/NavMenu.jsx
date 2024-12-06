@@ -3,10 +3,13 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Typography } from "@mui/material";
 
 export default function navMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const sxButton = { Typography: "p" };
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -34,9 +37,18 @@ export default function navMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem sx={sxButton} onClick={handleClose}>
+          Home
+        </MenuItem>
+        <MenuItem sx={sxButton} onClick={handleClose}>
+          About us
+        </MenuItem>
+        <MenuItem sx={sxButton} onClick={handleClose}>
+          Gallery
+        </MenuItem>
+        <MenuItem sx={sxButton} onClick={handleClose}>
+          Contact
+        </MenuItem>
       </Menu>
     </div>
   );

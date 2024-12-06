@@ -1,20 +1,19 @@
 import { useState } from "react";
-import NavMenu from "./components/NavMenu";
-import SpaIcon from "@mui/icons-material/Spa";
+import Navbar from "./components/Navbar";
+import Carousel from "./components/Carousel";
+import Home from "./components/Home";
+
 function App() {
   return (
-    <>
-      <div className="p-2 shadow-md flex flex-row-reverse">
-        {/* Navbar */}
-        <div className="w-1/2 flex items-center justify-end">
-          <NavMenu />
-        </div>
-        <div className="w-1/2 flex items-center px-5 font-light justify-between">
-          <SpaIcon />
-          <p className="text-sm">D&F LANDSCAPING</p>
-        </div>
+    <div>
+      <div className="fixed z-50 left-0 top-0 w-full shadow-lg">
+        <Navbar />
       </div>
-    </>
+      <div className="relative top-20">
+        <Carousel />
+        <Home />
+      </div>
+    </div>
   );
 }
 
